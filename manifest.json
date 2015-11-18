@@ -1,0 +1,38 @@
+{
+
+	"manifest_version": 2,
+
+	"name": "YouTube Playlist",
+	"description": "Adds your video suggestions on YouTube, into a playlist to be watched later.",
+	"version": "1.0",
+
+
+	"permissions": [
+	"tabs",
+	"storage"
+	],
+
+
+	"content_scripts":[
+	{
+		"matches":["*://*.youtube.com/*"],
+		"js":["includes/js/jquery-2.1.3.min.js","includes/js/jquery.noty.packaged.min.js","includes/js/content.js"],
+		"css":["includes/css/mystyles.css"]
+
+	}
+	],
+
+
+	"background": {
+		"scripts": ["includes/js/background.js"]
+	},
+
+	"icons": {
+		"128" : "includes/images/icon_128.png"
+	},
+
+
+	"browser_action": {
+		"default_popup": "static/popup.html"
+	}
+}
